@@ -11,3 +11,13 @@ Source code for Helm operator for Breizh Camp
  - créer le répertoire `breizh-camp-helm-operator`
  - dans le répertoire `breizh-camp-helm-operator`, scaffolding du projet : `operator-sdk init --plugins helm --domain fr.wilda --version v1 --helm-chart=https://github.com/philippart-s/ngnix-operator-helm-chart/releases/download/1.0.0/ngnix-operator-helm-chart-1.0.0.tgz`
  - A ce stage une arborescence complète a été générée, notamment la partie configuration dans `config` et un `Makefile` permettant le lancement des différentes commandes de build
+
+## 📄 CRD generation
+ - la branche `02-crd-generation` contient le résultat de cette étape
+ - création de la CRD dans Kubernetes : `make install`
+ - vérification de la création de la CRD : `kubectl get crd ngnixoperatorhelmcharts.charts.fr.wilda`
+```bash
+$ kubectl get crd ngnixoperatorhelmcharts.charts.fr.wilda
+NAME                                      CREATED AT
+ngnixoperatorhelmcharts.charts.fr.wilda   2022-06-03T11:15:55Z
+```
